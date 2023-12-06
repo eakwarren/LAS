@@ -1,4 +1,5 @@
-# Logic Articulation Switcher￼![LAS](https://github.com/eakwarren/LAS/assets/1768096/b06a7783-5f90-4234-8a83-81b226bf5ac1)
+# Logic Articulation Switcher￼![LAS@0 5x](https://github.com/eakwarren/LAS/assets/1768096/b87e68fa-0bd9-4c2e-95ba-ae6ff9539036)
+
 
 Developed with ❤️ by Eric Warren
 
