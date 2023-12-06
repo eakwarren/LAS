@@ -7,12 +7,10 @@ Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4
 ## About
 LAS is a lightweight articulation switcher solution with bi-directional feedback for Logic Pro using free open-source software that runs in a browser on any device. That’s a mouthful! Let’s unpack it a bit…
 
-< marketing >
-    LAS allows you to supercharge _your_ custom or 3rd party Logic art sets in a powerful, seamless and
+_< marketing >_ LAS allows you to supercharge _your_ custom or 3rd party Logic art sets in a powerful, seamless and
     transparent way. Demo arts effortlessly with a single button press. Select an art and hit record, change
     arts in realtime. Open the piano roll and instantly modify selected notes on the fly! Stay in the creative
-    flow and unlock your musical potential with LAS today! <sub>(This message brought to you by a patient spouse.)</sub>
-< /marketing >
+    flow and unlock your musical potential with LAS today! <sub>(This message brought to you by a patient spouse.)</sub> _< /marketing >_
 
 Please watch Demo.mp4 for a deeper understanding of what LAS can do for you. It’s donation-ware and comes with no warranties, but if you find it helpful please consider making a donation.
 
@@ -23,24 +21,28 @@ Please watch Demo.mp4 for a deeper understanding of what LAS can do for you. It�
 1. Unzip to ~/Documents (or another folder of your choice, but more paths will have to be edited.)
 
 2. Install the following apps.
-[MidiPipe](http://www.subtlesoft.square7.net/MidiPipe.html) v1.7.2 It’s free software used to translate midi cc from Open Stage Control to AppleScript commands. Install from site or from the Required Installers for Convenience folder. Start it and load _LAS.mipi_
+
+    [MidiPipe](http://www.subtlesoft.square7.net/MidiPipe.html) v1.7.2 It’s free software used to translate midi cc from Open Stage    Control to AppleScript commands. Install from site or from the Required Installers for Convenience folder. Start it and load _LAS.mipi_
  
-[sendosc](https://github.com/yoggy/sendosc) v1.0.3 It’s a free command-line tool for sending OSC packets. Install via [Homebrew](https://brew.sh) or from the Required Installers for Convenience folder. Lives in _/opt/homebrew/Cellar/sendosc/1.0.3/bin/_ by default. 
-_/opt… _isn’t normally visible, but ⌘⇧. will show it (and other things) in all their naked glory. Create the path and copy sendosc inside.
+    [sendosc](https://github.com/yoggy/sendosc) v1.0.3 It’s a free command-line tool for sending OSC packets. Install via [Homebrew](https://brew.sh) or from the Required Installers for Convenience folder. Lives in _/opt/homebrew/Cellar/sendosc/1.0.3/bin/_ by default. 
+ _/opt…_ isn’t normally visible, but ⌘⇧. will show it (and other things) in all their naked glory. Create the path and copy sendosc inside.
  
-[Open Stage Control](https://openstagecontrol.ammd.net/download/) v1.25.5+ It’s a free and modular OSC / Midi controller. Install from site or from the Required Installers for Convenience folder. Start it and load _OSC Server.config_. In the server's 'load' setting, set your username and path to _LAS.json_ and save the config, then close and restart the server. A new window with the json file loaded will open. **_It will look strange until you run the LAS.scpt and click on a track in Logic._** TIP: Use an old phone, iPad, tablet, —anything with a web browser— with LAS. Connect to the server by scanning the QR code in Open Stage Control or going to http://your-ip-address:8080.
+    [Open Stage Control](https://openstagecontrol.ammd.net/download/) v1.25.5+ It’s a free and modular OSC / Midi controller. Install from site or from the Required Installers for Convenience folder. Start it and load _OSC Server.config_. In the server's 'load' setting, set your username and path to _LAS.json_ and save the config, then close and restart the server. A new window with the json file loaded will open. **_It will look strange until you run the LAS.scpt and click on a track in Logic._** TIP: Use an old phone, iPad, tablet, —anything with a web browser— with LAS. Connect to the server by scanning the QR code in Open Stage Control or going to http://your-ip-address:8080.
 
 3. Configure the following items.
-Add sample library pictures to the _LibPics_ folder. Name them using the same prefix (followed by a space) you use for tracks. (ie. CS 4 Horns, BBC Clarinet 1, OTBS Full Strings, etc.) You _do_ use track prefixes, don’t you? LAS uses this prefix to build the picture URL. Sample pics are included for reference. _When adding new pics or changing their names in Finder, please restart Open Stage Control._
+    Add sample library pictures to the _LibPics_ folder. Name them using the same prefix (followed by a space) you use for tracks. (ie. CS 4 Horns, BBC Clarinet 1, OTBS Full Strings, etc.) You _do_ use track prefixes, don’t you? LAS uses this prefix to build the picture URL. Sample pics are included for reference. _When adding new pics or changing their names in Finder, please restart Open Stage Control._
  
-Open _LAS.scpt_ with Script Editor. Verify plistPath, sendoscPath and select an artColorSetting.
-0 - Basic: All buttons are one color.
-1 - Logic: Logic’s piano roll art colors. 🫣 _Set View > Set Note Color > By Articulation in piano roll._
-2 - Custom: Set custom art colors in the getArtColors handler function. (Adobe has a great [color resource](https://color.adobe.com/create/color-wheel).)
+    Open _LAS.scpt_ with Script Editor. Verify plistPath, sendoscPath and select an artColorSetting.
+   
+    0 - Basic: All buttons are one color.
+   
+    1 - Logic: Logic’s piano roll art colors*. 🫣 _Set View > Set Note Color > By Articulation in piano roll._
+   
+    2 - Custom: Set custom art colors in the getArtColors handler function. (Adobe has a great [color resource](https://color.adobe.com/create/color-wheel).)
  
-Make LAS your own, then press Run to start the script.
+    Make LAS your own, then press Run to start the script.
 
-4. Open Logic and create a project with art sets and track prefixes. Once a track is clicked, LAS will send data to Open Stage Control. **_The track Inspector window needs to be open in Logic in order for the script to get the Articulation Set name._** This happens fast, so you can switch Screensets or toggle the Piano Roll window quickly. I recommend ticking _Select tracks on region/marquee selection_ in _Logic Settings > Editing_ to ensure proper Articulation Set selection.
+5. Open Logic and create a project with art sets and track prefixes. Once a track is clicked, LAS will send data to Open Stage Control. **_The track Inspector window needs to be open in Logic in order for the script to get the Articulation Set name._** This happens fast, so you can switch Screensets or toggle the Piano Roll window quickly. I recommend ticking _Select tracks on region/marquee selection_ in _Logic Settings > Editing_ to ensure proper Articulation Set selection.
 
 ____________________
 
@@ -58,13 +60,15 @@ Some apps used by LAS are unsigned, so macOS Gatekeeper will prevent launching. 
  
 UI scripting is fragile and Logic has some quirks. UI elements are based on macOS Sonoma 14.1.1 and Logic v10.8. I’m unable to test other configurations. If you’re brave, you can edit script elements with [UI Browser](https://latenightsw.com/freeware/ui-browser/). <sub>(Note the ‘- Tracks’ window uses group 4 of window tracks_window while the ‘- Piano Roll’ window uses group 1 of window pianoRoll_window. Also watch for toggle panels and changing elements, they can disappear in certain instances and make targeting downstream elements difficult. Fun stuff!)</sub>
  
-Currently, LAS only supports keyswitch-based articulation sets. (Thanks Logic for the inconsistency.) 
+Currently, LAS only supports keyswitch-based articulation sets. (Thanks Logic for the inconsistency.)
+
+*The artColorSetting _1 - Logic_ is not supported with Babylon Waves [Art Conductor](https://www.babylonwaves.com/logic/) sets, since they don't use corresponding values in articulation set .plist files. 
  
 Sadly, Apple Watch doesn’t have a browser… yet. When it does, the image above will no longer be considered false advertising.
 
 
 ## To Do
-If you have a suggestion, or find a bug, please report it on GitHub. I don’t promise a fix or tech support, but I’m happy to take a look. 🙂
+If you have a suggestion, or find a bug, please report it on [GitHub](https://github.com/eakwarren/LAS/issues). I don’t promise a fix or tech support, but I’m happy to take a look. 🙂
 
 
 ## Special Thanks
