@@ -1,0 +1,29 @@
+#! /usr/bin/osascript
+
+on run arguments
+	tell application "System Events"
+		tell application "Script Editor"
+			activate
+			open ((path to Documents folder as text)) & "LAS:LAS.scpt"
+		end tell
+		#keystroke "r" using {command down}
+		tell process "Script Editor"
+		delay 2
+			click menu item "Run" of menu "Script" of menu bar 1
+		end tell
+		tell application "Script Editor"
+			set miniaturized of window 1 to true
+		end tell
+		tell application "open-stage-control"
+			activate
+		end tell
+		tell application "MidiPipe"
+		activate
+		open ((path to Documents folder as text)) & "LAS:LAS.mipi"
+			set miniaturized of window 1 to true
+		end tell
+		tell application "Terminal"
+			activate
+		end tell
+	end tell
+end run
