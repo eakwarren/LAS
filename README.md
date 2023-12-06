@@ -43,7 +43,7 @@ Please watch Demo.mp4 for a deeper understanding of what LAS can do for you. Itâ
  
     Make LAS your own, then press Run to start the script.
 
-5. Open Logic and create a project with art sets and track prefixes. Once a track is clicked, LAS will send data to Open Stage Control. **_The track Inspector window needs to be open in Logic in order for the script to get the Articulation Set name._** This happens fast, so you can switch Screensets or toggle the Piano Roll window quickly. I recommend ticking _Select tracks on region/marquee selection_ in _Logic Settings > Editing_ to ensure proper Articulation Set selection.
+5. Open Logic and create a project with art sets and track prefixes. Once a track is clicked, LAS will send data to Open Stage Control. **_The track Inspector panel needs to be open in Logic for the script to get the Articulation Set name._** This happens fast, so you can switch Screensets or toggle the Piano Roll window quickly. I recommend ticking _Select tracks on region/marquee selection_ in _Logic Settings > Editing_ to ensure proper Articulation Set selection.
 
 ____________________
 
