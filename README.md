@@ -63,7 +63,7 @@ UI scripting is fragile and Logic has some quirks. UI elements are based on macO
  
 Currently, LAS only supports keyswitch-based articulation sets. (Thanks Logic for the inconsistency.)
 
-*The artColorSetting _1 - Logic_ is not supported with Babylon Waves [Art Conductor](https://www.babylonwaves.com/logic/) sets, since they don't use corresponding values in articulation set .plist files. 
+*Color set not supported with Babylon Waves [Art Conductor](https://www.babylonwaves.com/logic/) sets, since they don't use corresponding values in articulation set .plist files. 
  
 Sadly, Apple Watch doesn’t have a browser… yet. When it does, the image above will no longer be considered false advertising.
 
