@@ -27,7 +27,7 @@ Please watch Demo.mp4 for a deeper understanding of what LAS can do for you. It�
     [MidiPipe](http://www.subtlesoft.square7.net/MidiPipe.html) v1.7.2 It’s free software used to translate midi cc from Open Stage    Control to AppleScript commands. Install from site or from the Required Installers for Convenience folder. Start it and load _LAS.mipi_
  
     [sendosc](https://github.com/yoggy/sendosc) v1.0.3 It’s a free command-line tool for sending OSC packets. Install via [Homebrew](https://brew.sh) or from the Required Installers for Convenience folder. Lives in _/opt/homebrew/Cellar/sendosc/1.0.3/bin/_ by default. 
-_/opt… _isn’t normally visible, but ⌘⇧. will show it (and other things) in all their naked glory. Create the path and copy sendosc inside.
+ _/opt…_ isn’t normally visible, but ⌘⇧. will show it (and other things) in all their naked glory. Create the path and copy sendosc inside.
  
     [Open Stage Control](https://openstagecontrol.ammd.net/download/) v1.25.5+ It’s a free and modular OSC / Midi controller. Install from site or from the Required Installers for Convenience folder. Start it and load _OSC Server.config_. In the server's 'load' setting, set your username and path to _LAS.json_ and save the config, then close and restart the server. A new window with the json file loaded will open. **_It will look strange until you run the LAS.scpt and click on a track in Logic._** TIP: Use an old phone, iPad, tablet, —anything with a web browser— with LAS. Connect to the server by scanning the QR code in Open Stage Control or going to http://your-ip-address:8080.
 
