@@ -68,7 +68,7 @@ Sadly, Apple Watch doesn’t have a browser… yet. When it does, the image abov
 
 
 ## To Do
-If you have a suggestion, or find a bug, please report it on GitHub. I don’t promise a fix or tech support, but I’m happy to take a look. 🙂
+If you have a suggestion, or find a bug, please report it on [GitHub](https://github.com/eakwarren/LAS/issues). I don’t promise a fix or tech support, but I’m happy to take a look. 🙂
 
 
 ## Special Thanks
