@@ -1,5 +1,5 @@
 #! /usr/bin/osascript
-
+#v1.0
 on run arguments
 	tell application "System Events"
 		tell application "Script Editor"
