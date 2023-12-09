@@ -14,7 +14,7 @@ _< marketing >_ LAS allows you to supercharge _your_ custom or 3rd party Logic a
     arts in realtime. Open the piano roll and instantly modify selected notes on the fly! Stay in the creative
     flow and unlock your musical potential with LAS today! <sub>(This message brought to you by a patient spouse.)</sub> _< /marketing >_
 
-Please watch Demo.mp4 for a deeper understanding of what LAS can do for you. It’s donation-ware and comes with no warranties, but if you find it helpful please consider making a donation.
+Please watch LASDemo.mp4 for a deeper understanding of what LAS can do for you. It’s donation-ware and comes with no warranties, but if you find it helpful please consider making a donation.
 
 ![Donate](https://github.com/eakwarren/LAS/assets/1768096/4ff30537-398f-4dcc-ae1f-b8597c1a4d91)
 
@@ -26,13 +26,13 @@ Please watch Demo.mp4 for a deeper understanding of what LAS can do for you. It�
 
     [MidiPipe](http://www.subtlesoft.square7.net/MidiPipe.html) v1.7.2 It’s free software used to translate midi cc from Open Stage    Control to AppleScript commands. Install from site or from the Required Installers for Convenience folder. Start it and load _LAS.mipi_
  
-    [sendosc](https://github.com/yoggy/sendosc) v1.0.3 It’s a free command-line tool for sending OSC packets. Install via [Homebrew](https://brew.sh) or from the Required Installers for Convenience folder. Lives in _/opt/homebrew/Cellar/sendosc/1.0.3/bin/_ by default. 
- _/opt…_ isn’t normally visible, but ⌘⇧. will show it (and other things) in all their naked glory. Create the path and copy sendosc inside.
+    [sendosc](https://github.com/yoggy/sendosc) v1.0.3 It’s a free command-line tool for sending OSC packets. Easiest to install from the Required Installers for Convenience folder. Or install via [Homebrew](https://brew.sh). Lives in _/opt/homebrew/Cellar/sendosc/1.0.3/bin/_ by default. 
+ _/opt…_ isn’t normally visible, but ⌘⇧. will show it (and other things in all their naked glory.) Create the path and copy sendosc inside.
  
     [Open Stage Control](https://openstagecontrol.ammd.net/download/) v1.25.5+ It’s a free and modular OSC / Midi controller. Install from site or from the Required Installers for Convenience folder. Start it and load _OSC Server.config_. In the server's 'load' setting, set your username and path to _LAS.json_ and save the config, then close and restart the server. A new window with the json file loaded will open. **_It will look strange until you run the LAS.scpt and click on a track in Logic._** TIP: Use an old phone, iPad, tablet, —anything with a web browser— with LAS. Connect to the server by scanning the QR code in Open Stage Control or going to http://your-ip-address:8080.
 
 3. Configure the following items.
-    Add sample library pictures to the _LibPics_ folder. Name them using the same prefix (followed by a space) you use for tracks. (ie. CS 4 Horns, BBC Clarinet 1, OTBS Full Strings, etc.) You _do_ use track prefixes, don’t you? LAS uses this prefix to build the picture URL. Sample pics are included for reference. _When adding new pics or changing their names in Finder, please restart Open Stage Control._
+    Add optional sample library pictures to the _LibPics_ folder. Name them using the same prefix (followed by a space) you use for tracks. (ie. CS 4 Horns, BBC Clarinet 1, OTBS Full Strings, etc.) You _do_ use track prefixes, don’t you? LAS uses this prefix to build the picture URL. A few sample pics are included for reference. _When adding new pics or changing their names in Finder, please restart Open Stage Control._
  
     Open _LAS.scpt_ with Script Editor. Verify plistPath, sendoscPath and select an artColorSetting.
    
@@ -54,7 +54,7 @@ _If you don’t want to see the LAS.json window because you’re using a device 
  
 The rest of the magic is up to you! 😉
  
-When you’re done having fun, use _Stop LAS_ to close everything. Except Logic. (I don’t want you to accidentally lose _my-8bar-loop-update7b-final-mix-final-final.logicx._)
+When you’re done having fun, use _Stop LAS_ to close everything. Except Logic. (I don’t want to accidentally lose _my-awesome-8bar-loop-update7b-final-mix-final-final.logicx_ project... again. *sigh*)
 
 
 ## Known Issues
@@ -62,7 +62,7 @@ Some apps used by LAS are unsigned, so macOS Gatekeeper will prevent launching. 
  
 UI scripting is fragile and Logic has some quirks. UI elements are based on macOS Sonoma 14.1.1 and Logic v10.8. I’m unable to test other configurations. If you’re brave, you can edit script elements with [UI Browser](https://latenightsw.com/freeware/ui-browser/). <sub>(Note the ‘- Tracks’ window uses group 4 of window tracks_window while the ‘- Piano Roll’ window uses group 1 of window pianoRoll_window. Also watch for toggle panels and changing elements, they can disappear in certain instances and make targeting downstream elements difficult. Fun stuff!)</sub>
  
-Currently, LAS only supports keyswitch-based articulation sets. (Thanks Logic for the inconsistency.)
+Currently, LAS only supports keyswitch-based articulation sets. (Thanks Logic for the inconsistent .plists.)
 
 *Color set not supported with Babylon Waves [Art Conductor](https://www.babylonwaves.com/logic/) sets, since they don't use corresponding values in articulation set .plist files. 
  
