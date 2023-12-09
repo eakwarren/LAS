@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple Computer//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Classes</key>
+	<dict>
+		<key>AppleScriptInHelper</key>
+		<dict>
+			<key>Attributes</key>
+			<dict>
+				<key>x</key>
+				<dict>
+					<key>Description</key>
+					<string>Just a string, aka string1</string>
+					<key>Name</key>
+					<string>x</string>
+				</dict>
+				<key>y</key>
+				<dict>
+					<key>Description</key>
+					<string>Just another string, aka string2</string>
+					<key>Name</key>
+					<string>y</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>description</string>
+			<key>Name</key>
+			<string>MidiPipe</string>
+			<key>PluralName</key>
+			<string>MidiPipe</string>
+		</dict>
+	</dict>
+	<key>Commands</key>
+	<dict>
+		<key>MIDISend</key>
+		<dict>
+			<key>Arguments</key>
+			<dict>
+				<key>toPort</key>
+				<dict>
+					<key>Description</key>
+					<string>name of MidiPipe Virtual Input Port</string>
+					<key>Name</key>
+					<string>toPort</string>
+				</dict>
+				<key>withData</key>
+				<dict>
+					<key>Description</key>
+					<string>MIDI data as list</string>
+					<key>Name</key>
+					<string>withData</string>
+				</dict>
+			</dict>
+			<key>Description</key>
+			<string>Send MIDI data to MidiPipe</string>
+			<key>Name</key>
+			<string>MIDISend</string>
+		</dict>
+	</dict>
+	<key>Description</key>
+	<string>description</string>
+	<key>Name</key>
+	<string>MidiPipe Script Suite</string>
+</dict>
+</plist>
