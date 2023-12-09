@@ -54,7 +54,7 @@ _If you don’t want to see the LAS.json window because you’re using a device 
  
 The rest of the magic is up to you! 😉
  
-When you’re done having fun, use _Stop LAS_ to close everything. Except Logic. (I don’t want to accidentally lose _my-awesome-8bar-loop-update7b-final-mix-final-final.logicx_ project... again. *sigh*)
+When you’re done having fun, use _Stop LAS_ to close everything. Except Logic. (I don’t want to accidentally lose _my-awesome-8bar-loop-update7b-final-mix-final-final.logicx_ project... again.)
 
 
 ## Known Issues
