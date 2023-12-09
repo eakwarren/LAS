@@ -14,7 +14,7 @@ _< marketing >_ LAS allows you to supercharge _your_ custom or 3rd party Logic a
     arts in realtime. Open the piano roll and instantly modify selected notes on the fly! Stay in the creative
     flow and unlock your musical potential with LAS today! <sub>(This message brought to you by a patient spouse.)</sub> _< /marketing >_
 
-Please watch LASDemo.mp4 for a deeper understanding of what LAS can do for you. It’s donation-ware and comes with no warranties, but if you find it helpful please consider making a donation.
+Please watch LASDemo.mp4 for a deeper understanding of LAS. It’s donation-ware and comes with no warranties, but if you find it helpful please consider making a donation.
 
 ![Donate](https://github.com/eakwarren/LAS/assets/1768096/4ff30537-398f-4dcc-ae1f-b8597c1a4d91)
 
