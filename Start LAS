@@ -2,27 +2,12 @@
 #v1.0
 on run arguments
 tell application "System Events"
-	
-	tell application "Finder"
-		set mipiFile to ((path to documents folder as text)) & "LAS:LAS.mipi"
-		set MidiPipe to ((path to documents folder as text)) & "LAS:Apps:MidiPipe.app"
-		set OSCFile to ((path to documents folder as text)) & "LAS:LAS.json"
-		set OSC to ((path to documents folder as text)) & "LAS:Apps:open-stage-control.app"
-		open file mipiFile using MidiPipe
-		open file OSCFile using OSC
-	end tell
-	tell application "MidiPipe"
-		set miniaturized of window 1 to true
-	end tell
-	
-	tell application "MidiPipe"
-		set miniaturized of window 1 to true
-	end tell
+
+
 	tell application "Script Editor"
 		activate
 		open ((path to documents folder as text)) & "LAS:LAS.scpt"
 	end tell
-	#keystroke "r" using {command down}
 	tell process "Script Editor"
 		delay 2
 		click menu item "Run" of menu "Script" of menu bar 1
@@ -30,9 +15,27 @@ tell application "System Events"
 	tell application "Script Editor"
 		set miniaturized of window 1 to true
 	end tell
+
+
+	tell application "open-stage-control"
+		activate
+	end tell
+
+
+	tell application "Finder"
+		set mipiFile to ((path to documents folder as text)) & "LAS:Apps:LAS.mipi"
+		set MidiPipe to ((path to documents folder as text)) & "LAS:Apps:MidiPipe.app"
+		open file mipiFile using MidiPipe
+	end tell
+	tell application "MidiPipe"
+		set miniaturized of window 1 to true
+	end tell
+
+
 	tell application "Terminal"
 		activate
 	end tell
-	
+
+
 end tell
 end run
