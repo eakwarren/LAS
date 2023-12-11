@@ -20,31 +20,23 @@ Please watch LASDemo.mp4 for a deeper understanding of LAS. It’s donation-ware
 
 
 ## Setup - unzip, install, configure, run
-1. Unzip to ~/Documents (or another folder of your choice, but more paths will have to be edited.)
+1. Unzip to your Documents folder (or another folder, but you'll need to edit more paths.)
 
-2. Install the following apps.
-
-    [MidiPipe](http://www.subtlesoft.square7.net/MidiPipe.html) v1.7.2 It’s free software used to translate midi cc from Open Stage    Control to AppleScript commands. Install from site or from the Required Installers for Convenience folder. Start it and load _LAS.mipi_
- 
-    [sendosc](https://github.com/yoggy/sendosc) v1.0.3 It’s a free command-line tool for sending OSC packets. Easiest to install from the Required Installers for Convenience folder. Or install via [Homebrew](https://brew.sh). Lives in _/opt/homebrew/Cellar/sendosc/1.0.3/bin/_ by default. 
- _/opt…_ isn’t normally visible, but ⌘⇧. will show it (and other things in all their naked glory.) Create the path and copy sendosc inside.
- 
-    [Open Stage Control](https://openstagecontrol.ammd.net/download/) v1.25.5+ It’s a free and modular OSC / Midi controller. Install from site or from the Required Installers for Convenience folder. Start it and load _OSC Server.config_. In the server's 'load' setting, set your username and path to _LAS.json_ and save the config, then close and restart the server. A new window with the json file loaded will open. **_It will look strange until you run the LAS.scpt and click on a track in Logic._** TIP: Use an old phone, iPad, tablet, —anything with a web browser— with LAS. Connect to the server by scanning the QR code in Open Stage Control or going to http://your-ip-address:8080.
+2. Download [Open Stage Control](https://openstagecontrol.ammd.net/download/) v1.25.5+ It’s a free and modular OSC / Midi controller. Unzip it and move the app into your Applications folder. Start it and load _OSC Server.config_. In the server's 'load' setting, set your username and path to _LAS.json_ and save the config, then close and restart the server. A new window with the json file loaded will open. **_It will look strange until you run the LAS.scpt and click on a track in Logic._** TIP: Use an old phone, iPad, tablet, —anything with a web browser— with LAS. Connect to the server by scanning the QR code in Open Stage Control or going to http://your-ip-address:8080.
 
 3. Configure the following items.
+MacOS Gatekeeper will prevent launching unsigned apps. In the Apps folder right-click and open both MidiPipe.app and sendosc and allow to run. Read more about Gatekeeper [here](https://en.wikipedia.org/wiki/Gatekeeper_(macOS)#Override).
     Add optional sample library pictures to the _LibPics_ folder. Name them using the same prefix (followed by a space) you use for tracks. (ie. CS 4 Horns, BBC Clarinet 1, OTBS Full Strings, etc.) You _do_ use track prefixes, don’t you? LAS uses this prefix to build the picture URL. A few sample pics are included for reference. _When adding new pics or changing their names in Finder, please restart Open Stage Control._
  
-    Open _LAS.scpt_ with Script Editor. Verify plistPath, sendoscPath and select an artColorSetting.
+    Open _LAS.scpt_ with Script Editor and select an artColorSetting.
    
-    0 - Basic: All buttons are one color.
+    0 - Basic: All buttons are one color. (Default)
    
     1 - Logic: Logic’s piano roll art colors*. 🫣 _Set View > Set Note Color > By Articulation in piano roll._
    
     2 - Custom: Set custom art colors in the getArtColors handler function. (Adobe has a great [color resource](https://color.adobe.com/create/color-wheel).)
- 
-    Make LAS your own, then press Run to start the script.
 
-5. Open Logic and create a project with art sets and track prefixes. Once a track is clicked, LAS will send data to Open Stage Control. **_The track Inspector panel needs to be open in Logic for the script to get the Articulation Set name._** This happens fast, so you can switch Screensets or toggle the Piano Roll window quickly. I recommend ticking _Select tracks on region/marquee selection_ in _Logic Settings > Editing_ to ensure proper Articulation Set selection.
+4. Open Logic and create a project with art sets and track prefixes. Once a track is clicked, LAS will send data to Open Stage Control. **_The track Inspector panel needs to be open in Logic for the script to get the Articulation Set name._** This happens fast, so you can switch Screensets or toggle the Piano Roll window quickly. I recommend ticking _Select tracks on region/marquee selection_ in _Logic Settings > Editing_ to ensure proper Articulation Set selection.
 
 ____________________
 
@@ -58,8 +50,6 @@ When you’re done having fun, use _Stop LAS_ to close everything. Except Logic.
 
 
 ## Known Issues
-Some apps used by LAS are unsigned, so macOS Gatekeeper will prevent launching. (ie. MidiPipe) Just right-click and select Open the first time. It’ll be ok. Read more about Gatekeeper [here](https://en.wikipedia.org/wiki/Gatekeeper_(macOS)#Override).
- 
 UI scripting is fragile and Logic has some quirks. UI elements are based on macOS Sonoma 14.1.1 and Logic v10.8. I’m unable to test other configurations. If you’re brave, you can edit script elements with [UI Browser](https://latenightsw.com/freeware/ui-browser/). <sub>(Note the ‘- Tracks’ window uses group 4 of window tracks_window while the ‘- Piano Roll’ window uses group 1 of window pianoRoll_window. Also watch for toggle panels and changing elements, they can disappear in certain instances and make targeting downstream elements difficult. Fun stuff!)</sub>
  
 Currently, LAS only supports keyswitch-based articulation sets. <sub>(Thanks Logic for the inconsistent .plists.)</sub>
