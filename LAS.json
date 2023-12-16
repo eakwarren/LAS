@@ -161,7 +161,7 @@
         "borderRadius": "auto",
         "padding": "auto",
         "html": "",
-        "css": "\nJS{{\n  var picName = OSC{/picName,0}\n   var css = 'background-image:url(\"LibPics/' + picName + '.png\"), url(\"LibPics/' + picName + '.jpg\"), url(\"LibPics/missing.png\"); height:100%; background-position:center; background-repeat:no-repeat; background-size:contain; \\n'\n  //console.log(css);\nreturn css\n}}\n\n",
+        "css": "\nJS{{\n  var picName = OSC{/picName,0}\n   var css = 'background-image:url(\"./LibPics/' + picName + '.png\"), url(\"./LibPics/' + picName + '.jpg\"), url(\"./LibPics/missing.png\"); height:100%; background-position:center; background-repeat:no-repeat; background-size:contain; \\n'\n  //console.log(css);\nreturn css\n}}\n\n",
         "size": "contain",
         "position": "center",
         "repeat": "no-repeat",
