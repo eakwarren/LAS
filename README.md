@@ -51,8 +51,6 @@ When you’re done having fun, use _Stop LAS_ to close everything. Except Logic.
 
 ## Known Issues
 UI scripting is fragile and Logic has some quirks. UI elements are based on macOS Sonoma 14.1.1 and Logic v10.8. I’m unable to test other configurations. If you’re brave, you can edit script elements with [UI Browser](https://latenightsw.com/freeware/ui-browser/). <sub>(Note the ‘- Tracks’ window uses group 4 of window tracks_window while the ‘- Piano Roll’ window uses group 1 of window pianoRoll_window. Also watch for toggle panels and changing elements, they can disappear in certain instances and make targeting downstream elements difficult. Fun stuff!)</sub>
- 
-Currently, LAS only supports keyswitch-based articulation sets. <sub>(Thanks Logic for the inconsistent .plists.)</sub>
 
 *Color set not supported with Babylon Waves [Art Conductor](https://www.babylonwaves.com/logic/) sets, since they don't use corresponding values in articulation set .plist files. 
  
