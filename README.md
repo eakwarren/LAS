@@ -68,7 +68,7 @@ Logic Pro developers, wherever they may roam.
 
 Jean-Emmanuel for developing [Open Stage Control](https://openstagecontrol.ammd.net/).
 
-Yoggy for developing [sendosc](https://github.com/yoggy/sendosc).
+Yoggy for developing [sendosc](https://github.com/yoggy/sendosc) and shakfu for [packaging dependencies](https://github.com/shakfu/sendosc/tree/master).
 
 Nico Wald for developing [MidiPipe](http://www.subtlesoft.square7.net/MidiPipe.html).
 
