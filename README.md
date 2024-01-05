@@ -7,14 +7,14 @@ Developed with ❤️ by Eric Warren
 Licensed under [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/)
 
 ## About
-LAS is a lightweight articulation switcher solution with bi-directional feedback for Logic Pro using free open-source software that runs in a browser on any device. What a mouthful! Let’s unpack that a bit…
+LAS is a lightweight articulation switcher solution with bi-directional feedback for Logic Pro using free and open-source software that runs in a browser on any device. What a mouthful! Let’s unpack that a bit…
 
 _< marketing >_ LAS allows you to supercharge _your_ custom or 3rd party Logic art sets in a powerful, seamless and
     transparent way. Demo arts effortlessly with a single button press. Select an art and hit record, change
     arts in realtime. Open the piano roll and instantly modify selected notes on the fly! Stay in the creative
     flow and unlock your musical potential with LAS today! <sub>(This message brought to you by a patient spouse.)</sub> _< /marketing >_
 
-Please watch LASDemo.mp4 for a deeper understanding of LAS. It’s donation-ware and comes with no warranties, but if you find it helpful please consider making a donation.
+Please watch [LAS Demo](https://youtu.be/s3V918m_87Y) for a deeper understanding of LAS. It’s donation-ware and comes with no warranties, but if you find it helpful please consider making a donation.
 
 ![Donate](https://github.com/eakwarren/LAS/assets/1768096/4ff30537-398f-4dcc-ae1f-b8597c1a4d91)
 
@@ -76,5 +76,5 @@ Pierre's (pieca) [Articulations](https://openstagecontrol.discourse.group/t/arti
 
 
 ## Release Notes
-v1.0 TBD
+v1.0 1/5/24
 • Initial release
