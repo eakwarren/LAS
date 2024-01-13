@@ -26,7 +26,7 @@ Please watch [LAS Demo](https://youtu.be/s3V918m_87Y) for a deeper understanding
 
 3. Configure the following items.
 MacOS Gatekeeper will prevent launching unsigned apps. In the Apps folder right-click and open both MidiPipe.app and sendosc and allow to run. Read more about Gatekeeper [here](https://en.wikipedia.org/wiki/Gatekeeper_(macOS)#Override).
-    Add optional sample library pictures to the _LibPics_ folder. Name them using the same prefix (followed by a space) you use for tracks. (ie. CS 4 Horns, BBC Clarinet 1, OTBS Full Strings, etc.) You _do_ use track prefixes, don’t you? LAS uses this prefix to build the picture URL. A few sample pics are included for reference. _When adding new pics or changing their names in Finder, please restart Open Stage Control._
+    Add optional sample library pictures to the _LibPics_ folder. Name them using the same prefix or suffix you use for tracks. (ie. CS 4 Horns, BBC Clarinet 1, OTBS Full Strings, etc.) LAS uses these to build the picture URL. A few sample pics are included for reference. Set prefix/suffix libCode setting in _LAS.scpt_ _When adding new pics or changing their names in Finder, please restart Open Stage Control._
  
     Open _LAS.scpt_ with Script Editor and select an artColorSetting.
    
@@ -50,7 +50,7 @@ When you’re done having fun, use _Stop LAS_ to close everything. Except Logic.
 
 
 ## Known Issues
-UI scripting is fragile and Logic has some quirks. UI elements are based on macOS Sonoma 14.1.1 and Logic v10.8. I’m unable to test other configurations. If you’re brave, you can edit script elements with [UI Browser](https://latenightsw.com/freeware/ui-browser/). <sub>(Note the ‘- Tracks’ window uses group 4 of window tracks_window while the ‘- Piano Roll’ window uses group 1 of window pianoRoll_window. Also watch for toggle panels and changing elements, they can disappear in certain instances and make targeting downstream elements difficult. Fun stuff!)</sub>
+UI scripting is fragile and Logic has some quirks. UI elements are tested in macOS Ventura+ and Logic 10.8. If you’re brave, you can edit script elements with [UI Browser](https://latenightsw.com/freeware/ui-browser/). <sub>(Note the ‘- Tracks’ window uses group 4 of window tracks_window while the ‘- Piano Roll’ window uses group 1 of window pianoRoll_window. Also watch for toggle panels and changing elements, they can disappear in certain instances and make targeting downstream elements difficult. Fun stuff!)</sub>
 
 *Color set not supported with Babylon Waves [Art Conductor](https://www.babylonwaves.com/logic/) sets, since they don't use corresponding values in articulation set .plist files. 
  
@@ -76,5 +76,10 @@ Pierre's (pieca) [Articulations](https://openstagecontrol.discourse.group/t/arti
 
 
 ## Release Notes
+v1.1 1/13/24
+• Added suffix library code support
+
+• Fixed menu freeze on macOS Ventura
+
 v1.0 1/5/24
 • Initial release
