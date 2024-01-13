@@ -77,6 +77,7 @@ Pierre's (pieca) [Articulations](https://openstagecontrol.discourse.group/t/arti
 
 ## Release Notes
 v1.1 1/13/24
+
 • Added suffix library code support
 
 • Fixed menu freeze on macOS Ventura
