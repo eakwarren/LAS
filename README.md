@@ -52,6 +52,8 @@ When you’re done having fun, use _Stop LAS_ to close everything. Except Logic.
 ## Known Issues
 UI scripting is fragile and Logic has some quirks. UI elements are tested in macOS Ventura+ and Logic 10.8. If you’re brave, you can edit script elements with [UI Browser](https://latenightsw.com/freeware/ui-browser/). <sub>(Note the ‘- Tracks’ window uses group 4 of window tracks_window while the ‘- Piano Roll’ window uses group 1 of window pianoRoll_window. Also watch for toggle panels and changing elements, they can disappear in certain instances and make targeting downstream elements difficult. Fun stuff!)</sub>
 
+‘Bad CPU type in executable’ error is resolved by installing the Intel version of sendosc via Homebrew following yoggy’s [instructions](https://github.com/yoggy/sendosc). Update sendoscPath in _LAS.scpt_ to “/usr/local/Cellar/sendosc/1.0.3/bin/sendosc “.
+
 *Color set not supported with Babylon Waves [Art Conductor](https://www.babylonwaves.com/logic/) sets, since they don't use corresponding values in articulation set .plist files. 
  
 Sadly, Apple Watch doesn’t have a browser… yet. When it does, the image above will no longer be considered false advertising.
