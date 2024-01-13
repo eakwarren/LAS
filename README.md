@@ -83,4 +83,5 @@ v1.1 1/13/24
 • Fixed menu freeze on macOS Ventura
 
 v1.0 1/5/24
+
 • Initial release
