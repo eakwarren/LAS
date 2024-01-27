@@ -56,7 +56,7 @@ UI scripting is fragile and Logic has some quirks. UI elements are tested in mac
 
 *Color set not supported with Babylon Waves [Art Conductor](https://www.babylonwaves.com/logic/) sets, since they don't use corresponding values in articulation set .plist files. 
 
-The Red B symbol in the Babylon Waves articulation set path name needs to be removed by renaming to just "Art Conductor Logic". The shell doesn't interpret that symbol as a common unicode character.
+The 🅱️ symbol in the Babylon Waves articulation set path name needs to be removed by renaming to just "Art Conductor Logic". The shell doesn't interpret that symbol as a common unicode character.
  
 Sadly, Apple Watch doesn’t have a browser… yet. When it does, the image above will no longer be considered false advertising.
 
