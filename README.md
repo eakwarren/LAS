@@ -55,6 +55,8 @@ UI scripting is fragile and Logic has some quirks. UI elements are tested in mac
 ‘Bad CPU type in executable’ error is resolved by installing the Intel version of sendosc via Homebrew following yoggy’s [instructions](https://github.com/yoggy/sendosc). Right-click and open sendosc and allow to run. (Note, the /usr folder is hidden by default in Finder. Toggle its visibility with (⌘⇧.). Update sendoscPath in _LAS.scpt_ to “/usr/local/Cellar/sendosc/1.0.3/bin/sendosc “. Note the trailing space after sendosc.
 
 *Color set not supported with Babylon Waves [Art Conductor](https://www.babylonwaves.com/logic/) sets, since they don't use corresponding values in articulation set .plist files. 
+
+The Red B symbol in the Babylon Waves articulation set path name needs to be removed by renaming to just "Art Conductor Logic". The shell doesn't interpret that symbol as a common unicode character.
  
 Sadly, Apple Watch doesn’t have a browser… yet. When it does, the image above will no longer be considered false advertising.
 
