@@ -1,6 +1,6 @@
 {
   "createdWith": "Open Stage Control",
-  "version": "1.25.6",
+  "version": "1.25.7",
   "type": "session",
   "content": {
     "type": "root",
@@ -109,7 +109,7 @@
         "lineWidth": "auto",
         "borderRadius": "auto",
         "padding": "auto",
-        "html": "<div style='font-size:100%; text-align:left; line-height:130%;'>\n <p style=\"text-align:center; -webkit-text-size-adjust:none; text-size-adjust:none;\">OSC{/message1,\"\"}OSC{/message2,\"\"}OSC{/message3,\"\"}OSC{/message4,\"\"}OSC{/message5,\"\"}OSC{/message6,\"\"}OSC{/message7,\"\"}OSC{/message8,\"\"}OSC{/message9,\"\"}OSC{/message10,\"\"}</p>\n  <!--div>Debug:/trkName:OSC{/trkName,0} --- /picName:OSC{/picName,0} --- /artNewInt:OSC{/artNewInt,0} --- /alphaFillOff:OSC{/alphaFillOff,\"\"} --- /activeColor:OSC{/activeColor,\"\"}\n  </br>Debug: /artColors:OSC{/artColors,0}\n  </br>Debug: /artList:OSC{/artList,0}\n </div-->\n</div>",
+        "html": "<div style='font-size:100%; text-align:left; line-height:130%;'>\n <p style=\"text-align:center; -webkit-text-size-adjust:none; text-size-adjust:none;\">OSC{/message1,\"\"}OSC{/message2,\"\"}OSC{/message3,\"\"}OSC{/message4,\"\"}OSC{/message5,\"\"}OSC{/message6,\"\"}OSC{/message7,\"\"}OSC{/message8,\"\"}OSC{/message9,\"\"}OSC{/message10,\"\"}</p>\n  <!--div>Debug: /switchesObjectArray:OSC{/switchesObjectArray,0}\n  </br>Debug: /trkName:OSC{/trkName,0} | /picName:OSC{/picName,0} | /artNewInt:OSC{/artNewInt,0} | /g_midiCh:OSC{/g_midiCh,0} | /g_octaveOffset:OSC{/g_octaveOffset,0} | /alphaFillOff:OSC{/alphaFillOff,\"\"}\n  </br>Debug: /artColors:OSC{/artColors,0}\n  </br>Debug: /artList:OSC{/artList,0}\n </div-->\n</div>",
         "css": "\nJS{{\nvar colRAW = OSC{/artColors,0}\n//console.log(colRAW);\nvar colors=colRAW.split(\",\");\n//console.log(colors);\n\nvar css = 'value {border-radius:.3em; font-family:\"Helvetica\"; font-size:160%; line-height:1.25; border:1px solid #000000; text-shadow: .1em .1em .1em #1b1b1b; }\\n'\nfor (var i = 0; i <= colors.length; i++) {\n  css += \"value:nth-child(\" + (i) + \"){border-radius:.3em; --color-fill:\" + colors[i-1] + \"; font-size:160%; border:1px solid #000000; text-shadow:.1em .1em .1em #1b1b1b; }\\n\"\n  css += \"value.on:nth-child(\" + (i) + \"){border-radius:.3em; --color-fill:\" + colors[i-1] + \"; font-size:160%; border:1px solid #ffffff; text-shadow: .1em .1em .1em #1b1b1b; color: #ffffff; }\\n\"\n}\n\n//style single active state\nvar curArt = OSC{/artNewInt,0}\n//console.log(curArt);\n\ncss += \"value:nth-child(\" + curArt + \"){border-radius:.3em; background-color: var(--color-fill); border:1px solid #ffffff; font-size:160%; text-shadow: .1em .1em .1em #1b1b1b; }\\n\"\ncss += \".marquee {-webkit-text-size-adjust:none;text-size-adjust:none;position: absolute;height: 100%;width:100%;margin: 0;text-align: left;-moz-transform: translateX(50%);-webkit-transform: translateX(50%);transform: translateX(50%);-moz-animation: bouncing-text 3s linear infinite alternate;-webkit-animation: bouncing-text 3s linear infinite alternate;animation: bouncing-text 10s linear infinite alternate;}@-moz-keyframes bouncing-text {0% {-moz-transform: translateX(50%);}100% {-moz-transform: translateX(-50%);}}@-webkit-keyframes bouncing-text {0% {-webkit-transform: translateX(50%);}100% {-webkit-transform: translateX(-50%);}}@keyframes bouncing-text {0% {-moz-transform: translateX(50%);-webkit-transform: translateX(50%);transform: translateX(50%);}100% {-moz-transform: translateX(-50%);-webkit-transform: translateX(-50%);transform: translateX(-50%);}}\\n\"\n\nreturn css\n}}\n\n",
         "value": -1,
         "default": 0,
@@ -118,7 +118,7 @@
         "preArgs": "",
         "target": "",
         "onCreate": "",
-        "onValue": "// send button number to MidiPipe for editing articulation on\n// individual notes in Logic's piano roll via UI AppleScript\nvar cc = 110\nvar channel = 16\nvar buttonNumber\nvar values = getProp(this, 'values')\nif (Array.isArray(values)) {\n  // if values is written as an array ([\"a\", \"b\"])\n  buttonNumber = values.indexOf(value)\n} else {\n  // if values is written as an object ({\"label a\": \"a\", \"label b\": \"b\"})\n  // +3 to account for Logic menu UI \"-\"\" and divider line\n  buttonNumber = Object.values(values).indexOf(value) +3\n}\n//console.log('value pressed buttonNumber ' + buttonNumber)\nsend('midi:OSC-Midi', '/control', channel, cc, buttonNumber)\n\n// switch's onValue property\n// since the message is sent here we could set bypass to true\n// to prevent sending the default messages based on\n// address, preArgs and target\nvar note = value\nsend('midi:OSC-Midi', '/note', channel, note, 127)\nsend('midi:OSC-Midi', '/note', channel, note, 0)\n\n// enable multiple taps\nsetTimeout(reset, 500)\nfunction reset() {\n  set(\"this\", -1, {send:false})\n}",
+        "onValue": "// send button number to MidiPipe for editing articulation on\n// individual notes in Logic's piano roll via UI AppleScript\nvar midiPipeChannel = 16\nvar midiPipecc = 110\nvar buttonNumber\nvar values = getProp(this, 'values')\nif (Array.isArray(values)) {\n  // if values is written as an array ([\"a\", \"b\"])\n  buttonNumber = values.indexOf(value)\n} else {\n  // if values is written as an object ({\"label a\": \"a\", \"label b\": \"b\"})\n  // +3 to bring 0 index to start at 3 for Logic menu UI (1:\"-\", 2:divider line)\n buttonNumber = Object.values(values).indexOf(value) + 3\n}\n//console.log('value pressed buttonNumber ' + buttonNumber)\nsend('midi:OSC-Midi', '/control', midiPipeChannel, midiPipecc, buttonNumber)\n\n\n\n\n// switch's onValue property\n// since the message is sent here we could set bypass to true\n// to prevent sending the default messages based on\n// address, preArgs and target\n\n// send midi switches to Logic\n// lookup additional properties tied to value\nvar oscObj = JSON.parse(get('switchesObjectArray'))\n//console.log('type: ' + typeof oscObj)\nvar type = oscObj[value][0]\n//console.log(type)\nvar selector = oscObj[value][1]\n//console.log(selector)\nvar valueStart = oscObj[value][2]\n//console.log(valueStart)\n\n// get global properties from artSet.plist\nvar g_channel = get('g_midiCh')\n//console.log(g_channel)\n//var g_octaveOffset = get('g_octaveOffset')\n//console.log(g_octaveOffset)\n\n// send proper switch to Logic\nif (type === 'Note On') { //NoteOn in Logic Studio instruments\n  if (valueStart === null) { //Babylon Waves note on arts don't set values\n    send('midi:OSC-Midi', '/note', g_channel, selector, 127)\n  } else {\n    send('midi:OSC-Midi', '/note', g_channel, selector, valueStart)\n  }\nsend('midi:OSC-Midi', '/note', g_channel, selector, 0)\n} else if (type === 'Controller') {\nsend('midi:OSC-Midi', '/control', g_channel, selector, valueStart)\n} else if (type === 'Poly Aftertouch') { //pressure is legacy name\nsend('midi:OSC-Midi', '/key_pressure', g_channel, selector, valueStart)\n} else if (type === 'Program') {\nsend('midi:OSC-Midi', '/program', g_channel, (valueStart - 1)) //-1 since Logic value 0 based\n} else if (type === 'Pitch Bend') {\nsend('midi:OSC-Midi', '/pitch', g_channel, valueStart)\n} else if (type === 'Aftertouch') {\nsend('midi:OSC-Midi', '/channel_pressure', g_channel, valueStart)\n} else if (type === 'Note Off') {\nsend('midi:OSC-Midi', '/note_off', g_channel, selector, 0)\n//} else if (type === 'Velocity') {\n//send('midi:OSC-Midi', '/???', g_channel, valueStart)\n}\n\n// enable multiple taps\nsetTimeout(reset, 500)\nfunction reset() {\n  set(\"this\", -1, {send:false})\n}",
         "layout": "grid",
         "gridTemplate": 4,
         "typeTags": "",
@@ -166,9 +166,64 @@
         "position": "center",
         "repeat": "no-repeat",
         "cache": false
+      },
+      {
+        "type": "variable",
+        "lock": false,
+        "id": "g_midiCh",
+        "comments": "0-15",
+        "value": "OSC{/g_midiCh, 0}",
+        "default": "",
+        "linkId": "",
+        "address": "auto",
+        "preArgs": "",
+        "typeTags": "",
+        "decimals": 2,
+        "target": "",
+        "ignoreDefaults": false,
+        "bypass": false,
+        "onCreate": "",
+        "onValue": ""
+      },
+      {
+        "type": "variable",
+        "lock": false,
+        "id": "g_octaveOffset",
+        "comments": "",
+        "value": "OSC{/g_octaveOffset,0}",
+        "default": "",
+        "linkId": "",
+        "address": "auto",
+        "preArgs": "",
+        "typeTags": "",
+        "decimals": 2,
+        "target": "",
+        "ignoreDefaults": false,
+        "bypass": false,
+        "onCreate": "",
+        "onValue": ""
+      },
+      {
+        "type": "variable",
+        "lock": false,
+        "id": "switchesObjectArray",
+        "comments": "",
+        "value": "OSC{/switchesObjectArray,0}",
+        "default": "",
+        "linkId": "",
+        "address": "auto",
+        "preArgs": "",
+        "typeTags": "",
+        "decimals": 2,
+        "target": "",
+        "ignoreDefaults": false,
+        "bypass": false,
+        "onCreate": "",
+        "onValue": ""
       }
     ],
     "tabs": [],
-    "tabsPosition": "top"
+    "tabsPosition": "top",
+    "onPreload": ""
   }
 }
