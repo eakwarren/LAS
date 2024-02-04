@@ -1,5 +1,5 @@
 #! /usr/bin/osascript
-#v1.1
+#v1.2
 on run arguments
 tell application "System Events"
 
