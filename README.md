@@ -22,11 +22,11 @@ Please watch [LAS Demo](https://youtu.be/s3V918m_87Y) for a deeper understanding
 ## Setup - unzip, install, configure, run
 1. Unzip to your Documents folder (or another folder, but you'll need to edit more paths.)
 
-2. Download [Open Stage Control](https://openstagecontrol.ammd.net/download/) v1.25.5+ It’s a free and modular OSC / Midi controller. Unzip it and move the app into your Applications folder. Start it and load _OSC Server.config_. In the server's 'load' setting, set your username and path to _LAS.json_ and save the config, then close and restart the server. A new window with the json file loaded will open. **_It will look strange until you run the LAS.scpt and click on a track in Logic._** TIP: Use an old phone, iPad, tablet, —anything with a web browser— with LAS. Connect to the server by scanning the QR code in Open Stage Control or going to http://your-ip-address:8080.
+2. Download [Open Stage Control](https://openstagecontrol.ammd.net/download/) v1.25.5+ It’s a free and modular OSC / Midi controller. Unzip and move to your Applications folder. Start it and load _OSC Server.config_. In the server's 'load' setting, set your username and path to _LAS.json_ and save the config, then close and restart the server. A new window with the json file loaded will open. **_It will look strange until you run the LAS.scpt and click on a track in Logic._** TIP: Use an old phone, iPad, tablet, —anything with a web browser— with LAS. Connect to the server by scanning the QR code in Open Stage Control or going to http://your-server-ip-address:8080.
 
 3. Configure the following items.
-MacOS Gatekeeper will prevent launching unsigned apps. In the Apps folder right-click and open both MidiPipe.app and sendosc and allow to run. Read more about Gatekeeper [here](https://en.wikipedia.org/wiki/Gatekeeper_(macOS)#Override).
-    Add optional sample library pictures to the _LibPics_ folder. Name them using the same prefix or suffix you use for tracks. (ie. CS 4 Horns, BBC Clarinet 1, OTBS Full Strings, etc.) LAS uses these to build the picture URL. A few sample pics are included for reference. Set prefix/suffix libCode setting in _LAS.scpt_ _When adding new pics or changing their names in Finder, please restart Open Stage Control._
+MacOS Gatekeeper will prevent launching unsigned apps. In the Apps folder, right-click and open both MidiPipe.app and sendoscUNI and allow to run. Read more about Gatekeeper [here](https://en.wikipedia.org/wiki/Gatekeeper_(macOS)#Override).
+    Add sample library pictures to the _LibPics_ folder. Name them using the same prefix or suffix you use for tracks or art set names. Select a libCode aption in _LAS.scpt._ **_When adding new pics or changing their names in Finder, please restart Open Stage Control._**
  
     Open _LAS.scpt_ with Script Editor and select an artColorSetting.
    
@@ -36,11 +36,11 @@ MacOS Gatekeeper will prevent launching unsigned apps. In the Apps folder right-
    
     2 - Custom: Set custom art colors in the getArtColors handler function. (Adobe has a great [color resource](https://color.adobe.com/create/color-wheel).)
 
-4. Open Logic and create a project with art sets and track prefixes. Once a track is clicked, LAS will send data to Open Stage Control. **_The track Inspector panel needs to be open in Logic for the script to get the Articulation Set name._** This happens fast, so you can switch Screensets or toggle the Piano Roll window quickly. I recommend ticking _Select tracks on region/marquee selection_ in _Logic Settings > Editing_ to ensure proper Articulation Set selection.
+4. Open Logic and create a project with art sets. Once a track is clicked, LAS will send data to Open Stage Control. **_Logic's main window must be open, but can be minimized._** I recommend ticking _Select tracks on region/marquee selection_ in _Logic Settings > Editing_ to ensure proper art set selection.
 
 ____________________
 
-You made it! Congratulations! 🙌🏼 I’ve included a couple of handy scripts as a reward. One starts everything up, the other stops everything. Verify paths in _Start LAS_ and save, then open Terminal and type chmod +x and drag _Start LAS_ into the Terminal window and press Return. Do the same for _Stop LAS_. This will make them executable. When you double-click _Start LAS_, it will open MidiPipe, Open Stage Control and Script Editor and run the script. Accept any permission requests that may pop up. Terminal will tell you when it’s done. Press ⌘Q to close Terminal.
+You made it! Congratulations! 🙌🏼 I’ve included a couple of handy scripts as a reward. One starts everything, the other stops everything. Verify paths in _Start LAS_ and save, then open Terminal and type chmod +x and drag _Start LAS_ into the Terminal window and press Return. Do the same for _Stop LAS_. This will make them executable. When you double-click _Start LAS_, it will open MidiPipe, Open Stage Control and Script Editor and run the script. Accept any permission requests that may pop up. Terminal will tell you when it’s done. Press ⌘Q to close Terminal.
  
 _If you don’t want to see the LAS.json window because you’re using a device with a web browser to switch arts, stop the OSC server, check the box to the right of no-gui, save OSC Server.config and then restart the server._
  
@@ -50,13 +50,11 @@ When you’re done having fun, use _Stop LAS_ to close everything. Except Logic.
 
 
 ## Known Issues
-UI scripting is fragile and Logic has some quirks. UI elements are tested in macOS Ventura+ and Logic 10.8. If you’re brave, you can edit script elements with [UI Browser](https://latenightsw.com/freeware/ui-browser/). <sub>(Note the ‘- Tracks’ window uses group 4 of window tracks_window while the ‘- Piano Roll’ window uses group 1 of window pianoRoll_window. Also watch for toggle panels and changing elements, they can disappear in certain instances and make targeting downstream elements difficult. Fun stuff!)</sub>
+UI scripting is fragile and Logic has quirks. UI elements are tested in macOS Ventura+ and Logic 10.8+. If you’re brave, you can edit script elements with [UI Browser](https://latenightsw.com/freeware/ui-browser/).
 
-‘Bad CPU type in executable’ error is resolved by installing the Intel version of sendosc via Homebrew following yoggy’s [instructions](https://github.com/yoggy/sendosc). Right-click and open sendosc and allow to run. (Note, the /usr folder is hidden by default in Finder. Toggle its visibility with (⌘⇧.). Update sendoscPath in _LAS.scpt_ to “/usr/local/Cellar/sendosc/1.0.3/bin/sendosc “. Note the trailing space after sendosc.
+*Color set not supported with Babylon Waves [Art Conductor](https://www.babylonwaves.com/logic/) sets, since they don't use corresponding values in articulation set .plist files.
 
-*Color set not supported with Babylon Waves [Art Conductor](https://www.babylonwaves.com/logic/) sets, since they don't use corresponding values in articulation set .plist files. 
-
-The 🅱️ symbol in the Babylon Waves articulation set path name needs to be removed by renaming to just "Art Conductor Logic". The shell doesn't interpret that symbol as a common unicode character.
+The 🅱️ symbol in the Babylon Waves articulation set path name may need to be removed by renaming to just "Art Conductor Logic". The shell might not interpret that symbol correctly.
  
 Sadly, Apple Watch doesn’t have a browser… yet. When it does, the image above will no longer be considered false advertising.
 
@@ -80,6 +78,20 @@ Pierre's (pieca) [Articulations](https://openstagecontrol.discourse.group/t/arti
 
 
 ## Release Notes
+v1.2 2/XX/24
+
+• Added support for multiple art types (controller, program, aftertouch, pitch bend, note off)
+
+• Added support for Per Channel Strip MIDI Channels in art sets
+
+• Added library code option to build pic URL from art set name
+
+• Added sendosc universal binary
+
+• Added support for large art sets (≤ 50 arts)
+
+• Optimized Logic queries and processing
+
 v1.1 1/13/24
 
 • Added suffix library code support

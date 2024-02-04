@@ -5,8 +5,8 @@
 {\colortbl;\red255\green255\blue255;\red0\green0\blue0;\red251\green2\blue7;\red0\green0\blue0;
 \red255\green255\blue255;\red255\green255\blue255;}
 {\*\expandedcolortbl;;\cssrgb\c0\c0\c0;\cssrgb\c100000\c14913\c0;\cssrgb\c0\c1\c1;
-\cssrgb\c100000\c100000\c100000\c0;\cssrgb\c100000\c100000\c99985\c0;}
-\margl1440\margr1440\vieww17720\viewh21860\viewkind0
+\cssrgb\c100000\c100000\c99985\c0;\cssrgb\c100000\c100000\c100000\c0;}
+\margl1440\margr1440\vieww17720\viewh32160\viewkind0
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li173\fi1\ri-7953\partightenfactor0
 
 \f0\fs156 \cf0 Logic
@@ -15,7 +15,7 @@
 \fs156 Articulation\
 Switcher
 \fs24  V
-\fs36 1.1
+\fs36 1.2
 \f1\fs156 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li173\fi1\ri-7953\partightenfactor0
 
@@ -80,30 +80,30 @@ Please watch {\field{\*\fldinst{HYPERLINK "https://youtu.be/s3V918m_87Y"}}{\fldr
 
 \fs18 \cf2  
 \fs36 \
-2. Download {\field{\*\fldinst{HYPERLINK "https://openstagecontrol.ammd.net/download/"}}{\fldrslt Open Stage Control}} v1.25.5+ It\'92s a free and modular OSC / Midi controller. Unzip it and move the app into your Applications folder. Start it and load 
+2. Download {\field{\*\fldinst{HYPERLINK "https://openstagecontrol.ammd.net/download/"}}{\fldrslt Open Stage Control}} v1.25.5+ It\'92s a free and modular OSC / Midi controller. Unzip and move to your Applications folder. Start it and load 
 \f4\i OSC Server.config
 \f0\i0 . In the server's 'load' setting, set your username and path to 
 \f4\i LAS.json
 \f0\i0  and save the config, then close and restart the server. A new window with the json file loaded will open. 
-\f6\i\b It will look strange until you run the LAS.scpt and click on a track in Logic. 
-\f0\i0\b0 TIP: Use an old phone, iPad, tablet, \'97anything with a web browser\'97 with LAS. Connect to the server by scanning the QR code in Open Stage Control or going to http://your-ip-address:8080.\
+\f6\i\b It will look strange until you run LAS.scpt and click a track in Logic. 
+\f0\i0\b0 TIP: Use an old phone, iPad, tablet, \'97anything with a web browser\'97 with LAS. Connect to the server by scanning the QR code in Open Stage Control or going to http://your-server-ip-address:8080.\
 
 \fs18  
 \fs36 \
 3. Configure the following items.\
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li173\fi1\ri-7953\partightenfactor0
-\cf0 MacOS Gatekeeper will prevent launching unsigned apps. In the Apps folder, r\cf2 ight-click and open both MidiPipe.app and sendosc and allow to run.\cf0  Read more about Gatekeeper {\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Gatekeeper_(macOS)#Override"}}{\fldrslt here}}.\cf2 \
+\cf0 MacOS Gatekeeper will prevent launching unsigned apps. In the Apps folder, r\cf2 ight-click and open both MidiPipe.app and sendoscUNI and allow to run.\cf0  Read more about Gatekeeper {\field{\*\fldinst{HYPERLINK "https://en.wikipedia.org/wiki/Gatekeeper_(macOS)#Override"}}{\fldrslt here}}.\cf2 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab480\li173\fi1\ri-7953\slleading40\pardirnatural\partightenfactor0
 
 \fs18 \cf2  
 \fs36 \
-Add optional sample library pictures to the 
+Add sample library pictures to the 
 \f4\i LibPics
-\f0\i0  folder. Name them using the same prefix or suffix you use for tracks. (ie. CS 4 Horns, BBC Clarinet 1, OTBS Full Strings, etc.) LAS uses these to build the picture URL. A few sample pics are included for reference. Set prefix/suffix libCode setting in 
+\f0\i0  folder. Name them using the same prefix or suffix you use for tracks or art set names. Select a libCode option in 
 \f4\i LAS.scpt
 \f0\i0 . 
-\f4\i When adding new pics or changing their names in Finder, please restart Open Stage Control. 
-\f0\i0 \
+\f6\i\b When adding new pics or changing their names in Finder, restart Open Stage Control. 
+\f0\i0\b0 \
 
 \fs18  
 \fs36 \
@@ -122,13 +122,13 @@ Open
 
 \fs18 \cf2  
 \fs36 \
-4. Open Logic and create a project with art sets and track prefixes. Once a track is clicked, LAS will send data to Open Stage Control. 
-\f6\i\b The track Inspector panel needs to be open in Logic for the script to get the Articulation Set name.
-\f0\i0\b0  This happens fast, so you can switch Screensets or toggle the Piano Roll window quickly. I recommend ticking 
+4. Open Logic and create a project with art sets. Once a track is clicked, LAS will send data to Open Stage Control. 
+\f6\i\b Logic\'92s main window must be open, but can be minimized.
+\f0\i0\b0  I recommend ticking 
 \f4\i Select tracks on region/marquee selection
 \f0\i0  in 
 \f4\i Logic Settings > Editing
-\f0\i0  to ensure proper Articulation Set selection.
+\f0\i0  to ensure proper art set selection.
 \f4\i \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab480\li173\fi1\ri-7953\slleading40\pardirnatural\qc\partightenfactor0
 
@@ -137,7 +137,7 @@ Open
 \cf2 \
 You made it! Congratulations! 
 \f2 \uc0\u55357 \u56908 \u55356 \u57340 
-\f0  I\'92ve included a couple of handy scripts as a reward. One starts everything up, the other stops everything. Verify paths in 
+\f0  I\'92ve included a couple of handy scripts as a reward. One starts everything, the other stops everything. Verify paths in 
 \f4\i Start LAS
 \f0\i0  and save
 \f4\i , 
@@ -147,9 +147,9 @@ You made it! Congratulations!
 \f4\i Stop LAS
 \f0\i0 . This will make them executable. When you double-click 
 \f4\i Start LAS
-\f0\i0 , it will open MidiPipe, Open Stage Control and Script Editor and run the script. Accept any permission requests that may pop up. Terminal will tell you when it\'92s done. Press 
-\f7 \cf4 \uc0\u8984 
-\f0 Q to close \cf2 Terminal.\
+\f0\i0 , it will open MidiPipe, Open Stage Control and Script Editor and run the script. Accept any permission requests that may pop up. Terminal will tell you when it\'92s done. \cf4 Press 
+\f7 \uc0\u8984 
+\f0 Q to close Terminal.\cf2 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab480\li173\fi1\ri-7953\slleading40\pardirnatural\partightenfactor0
 
 \fs18 \cf2  
@@ -179,33 +179,32 @@ When you\'92re done having fun, use
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li173\fi1\ri-7953\partightenfactor0
 
-\f3\b\fs48 \cf0 Known Issues
-\f0\b0\fs36 \
-UI scripting is fragile and Logic has quirks. UI elements are tested in macOS Ventura+ and Logic 10.8+. \cf2 If you\'92re brave, you can edit script elements with {\field{\*\fldinst{HYPERLINK "https://latenightsw.com/freeware/ui-browser/"}}{\fldrslt UI Browser}}. 
-\fs24 (Note the \'91- Tracks\'92 window uses group 4 of window tracks_window while the \'91- Piano Roll\'92 window uses group 1 of window pianoRoll_window. Also watch for toggle panels and changing elements, they can disappear in certain instances and make targeting downstream elements difficult. Fun stuff!)
-\fs36 \cf0 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li173\fi1\ri-7953\partightenfactor0
-
-\fs18 \cf2  
-\fs36 \
-\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab480\li173\fi1\ri-7953\slleading40\pardirnatural\partightenfactor0
-\cf0 \'91\cf2 \cb5 \expnd0\expndtw0\kerning0
-Bad CPU type in executable\'92 error is resolved by installing the Intel version of sendosc via Homebrew following yoggy\'92s {\field{\*\fldinst{HYPERLINK "https://github.com/yoggy/sendosc"}}{\fldrslt instructions}}. \cf0 \cb1 \kerning1\expnd0\expndtw0 R\cf2 ight-click and open sendosc and allow to run. (Note, the /usr folder is hidden by default in Finder. Toggle its visibility with (
+\f3\b\fs48 \cf0 Additional Features
+\f0\b0\fs36  \
+Debug Mode: In debug mode, you can inspect OSC messages and edit other .json settings. In 
+\f4\i LAS.json
+\f0\i0 , enter debug mode by pressing 
 \f7 \cf4 \uc0\u8984 
-\fs34 \expnd0\expndtw0\kerning0
-\uc0\u8679 
-\f0\fs36 \kerning1\expnd0\expndtw0 .). \cf2 \cb5 \expnd0\expndtw0\kerning0
-Update sendoscPath in 
-\f4\i LAS.scpt 
-\f0\i0 to \'93/usr/local/Cellar/sendosc/1.0.3/bin/sendosc \'93. Note the trailing space after sendosc.\cf4 \cb6 \
+\f0 E. This will open the OSC Editor panels. Click on the button area to select the LAS widget, then in the right panel, open 
+\f4\i style > html
+\f0\i0 . Remove the !-- and -- from lines 3 and 7 respectively.\cf0 \
+\
+\
+
+\f3\b\fs48 Known Issues
+\f0\b0\fs36 \
+UI scripting is fragile and Logic has quirks. UI elements are tested in macOS Ventura+ and Logic 10.8+. \cf2 If you\'92re brave, you can edit script elements with {\field{\*\fldinst{HYPERLINK "https://latenightsw.com/freeware/ui-browser/"}}{\fldrslt UI Browser}}.\cf4 \cb5 \expnd0\expndtw0\kerning0
+\
 \pard\pardeftab720\li148\fi18\partightenfactor0
-\cf2 \cb5 \
+\cf2 \cb6 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab480\li173\fi1\ri-7953\slleading40\pardirnatural\partightenfactor0
 \cf0 \cb1 \kerning1\expnd0\expndtw0 *Color set not supported with Babylon Waves {\field{\*\fldinst{HYPERLINK "https://www.babylonwaves.com/logic/"}}{\fldrslt Art Conductor}} sets, since they don\'92t use corresponding values in articulation set .plist files.\
 \pard\pardeftab720\li148\fi18\partightenfactor0
-\cf4 \cb6 \expnd0\expndtw0\kerning0
+\cf4 \cb5 \expnd0\expndtw0\kerning0
 \
-The \uc0\u55356 \u56689 \u65039  symbol in the Babylon Waves articulation set path name needs to be removed by renaming to just "Art Conductor Logic". The shell doesn't interpret that symbol as a common unicode character.\cf0 \cb1 \kerning1\expnd0\expndtw0 \
+The 
+\f2 \uc0\u55356 \u56689 \u65039 
+\f0  symbol in the Babylon Waves articulation set path name may need to be removed by renaming to just "Art Conductor Logic". The shell might not interpret that symbol correctly.\cf0 \cb1 \kerning1\expnd0\expndtw0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\pardeftab480\li173\fi1\ri-7953\slleading40\pardirnatural\partightenfactor0
 
 \fs18 \cf0  
@@ -245,8 +244,21 @@ Nico Wald for developing {\field{\*\fldinst{HYPERLINK "http://www.subtlesoft.squ
 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li173\fi1\ri-7953\partightenfactor0
 
-\f3\b\fs48 \cf0 Release Notes
-\fs36 \
+\f3\b\fs48 \cf0 Release Notes\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li173\fi1\ri-7953\partightenfactor0
+
+\f0\b0\fs36 \cf0 v1.2 2/XX/24\
+\'95 Added support for multiple art types (controller, program, aftertouch, pitch bend, note off)\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li173\fi1\ri-7953\partightenfactor0
+\cf0 \'95 Added support for Per Channel Strip MIDI Channels in art sets\
+\'95 Added library code option to build pic URL from art set name\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li173\fi1\ri-7953\partightenfactor0
+\cf0 \'95 Added sendosc universal binary\
+\'95 Added support for large art sets (\uc0\u8804  50 arts)\
+\'95 Optimized Logic queries and processing\
+\pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li173\fi1\ri-7953\partightenfactor0
+
+\f3\b \cf0 \
 \pard\tx720\tx1440\tx2160\tx2880\tx3600\tx4320\tx5040\tx5760\tx6480\tx7200\tx7920\tx8640\li173\fi1\ri-7953\partightenfactor0
 
 \f0\b0 \cf0 v1.1 1/13/24\
