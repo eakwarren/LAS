@@ -92,6 +92,8 @@ v1.2 2/XX/24
 
 • Optimized Logic queries and processing
 
+• Fixed bug when right panels open in Main Window
+
 v1.1 1/13/24
 
 • Added suffix library code support
