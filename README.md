@@ -32,7 +32,7 @@ MacOS Gatekeeper will prevent launching unsigned apps. In the Apps folder, right
    
     0 - Basic: All buttons are one color. (Default)
    
-    1 - Logic: Logic’s piano roll art colors*. 🫣 _Set View > Set Note Color > By Articulation in piano roll._
+    1 - Logic: Logic’s piano roll art colors. 🫣 _Set View > Set Note Color > By Articulation in piano roll._
    
     2 - Custom: Set custom art colors in the getArtColors handler function. (Adobe has a great [color resource](https://color.adobe.com/create/color-wheel).)
 
@@ -52,10 +52,6 @@ When you’re done having fun, use _Stop LAS_ to close everything. Except Logic.
 ## Known Issues
 UI scripting is fragile and Logic has quirks. UI elements are tested in macOS Ventura+ and Logic 10.8+. If you’re brave, you can edit script elements with [UI Browser](https://latenightsw.com/freeware/ui-browser/).
 
-*Color set not supported with Babylon Waves [Art Conductor](https://www.babylonwaves.com/logic/) sets, since they don't use corresponding values in articulation set .plist files.
-
-The 🅱️ symbol in the Babylon Waves articulation set path name may need to be removed by renaming to just "Art Conductor Logic". The shell might not interpret that symbol correctly.
- 
 Sadly, Apple Watch doesn’t have a browser… yet. When it does, the image above will no longer be considered false advertising.
 
 
