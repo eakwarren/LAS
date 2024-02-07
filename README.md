@@ -74,7 +74,7 @@ Pierre's (pieca) [Articulations](https://openstagecontrol.discourse.group/t/arti
 
 
 ## Release Notes
-v1.2 2/XX/24
+v1.2 2/7/24
 
 • Added support for multiple art types (controller, program, aftertouch, pitch bend, note off)
 
