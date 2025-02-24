@@ -50,6 +50,8 @@ When you’re done having fun, use _Stop LAS_ to close everything. Except Logic.
 
 
 ## Known Issues
+View known issues on [GitHub](https://github.com/eakwarren/LAS/issues)
+
 UI scripting is fragile and Logic has quirks. UI elements are tested in macOS Ventura+ and Logic 10.8+. If you’re brave, you can edit script elements with [UI Browser](https://latenightsw.com/freeware/ui-browser/).
 
 Sadly, Apple Watch doesn’t have a browser… yet. When it does, the image above will no longer be considered false advertising.
@@ -74,6 +76,14 @@ Pierre's (pieca) [Articulations](https://openstagecontrol.discourse.group/t/arti
 
 
 ## Release Notes
+v1.3 2/24/25
+
+• Update to MidiPipe v1.8.2
+
+• Update LAS.mipi AppleScript process name to “Logic Pro”
+
+• Update LAS.json to OSC v1.27.5
+
 v1.2 2/7/24
 
 • Added support for multiple art types (controller, program, aftertouch, pitch bend, note off)
