@@ -1,6 +1,6 @@
 {
   "createdWith": "Open Stage Control",
-  "version": "1.26.1",
+  "version": "1.27.5",
   "type": "session",
   "content": {
     "type": "root",
@@ -95,7 +95,7 @@
         "id": "LAS",
         "visible": true,
         "interaction": true,
-        "comments": "v1.2",
+        "comments": "v1.3",
         "width": "96%",
         "height": "83%",
         "expand": "false",
