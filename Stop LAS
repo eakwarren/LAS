@@ -11,8 +11,12 @@ on run arguments
 		tell application "MidiPipe"
 			quit
 		end tell
-	end tell
-	tell application "Terminal"
-		activate
+
+		delay 2
+
+ 	   tell application "Terminal"
+ 		   	set miniaturized of window 1 to true
+ 	   end tell
+
 	end tell
 end run
